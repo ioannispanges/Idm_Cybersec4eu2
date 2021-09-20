@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Manage your account</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+          <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+          <h1>Application Form</h1>
+          <script language="javascript">
+
+
+              timer=setTimeout("window.close('http://localhost:8080/form','width=550,height=400')",800)
+          </script>
+
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Application Category:</span> <label class="html-editor-align-justify" th:text="${applicationcategory}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Anticipated Entry Term:</span> <label class="html-editor-align-justify" th:text="${applicationentry}"></label></h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Academic Programme:</span><label class="html-editor-align-justify" th:text="${academicprogramme}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Mode of Study:</span> <label class="html-editor-align-justify" th:text="${modestudy}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Proposed research topic:</span> <label class="html-editor-align-justify" th:text="${proposedtopic}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Proposed research supervisor:</span><label class="html-editor-align-justify" th:text="${proposedsupervisor}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Proposed research group:</span> <label class="html-editor-align-justify" th:text="${proposedgroup}"></label> </h5>
+          <h1>Personal Details</h1>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">First Name:</span><label class="html-editor-align-justify" th:text="${firstname}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Last Name:</span><label class="html-editor-align-justify" th:text="${lastname}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Gender:</span><label class="html-editor-align-justify" th:text="${gender}"></label> </h5>
+
+          <h1>Contact Details</h1>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Email Address:</span><label class="html-editor-align-justify" th:text="${email}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Permanent Address Line 1:</span><label class="html-editor-align-justify" th:text="${address1}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Permanent Address Line 2:</span><label class="html-editor-align-justify" th:text="${address2}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Permanent Address City:</span><label class="html-editor-align-justify" th:text="${city}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Permanent Address Country/State:</span><label class="html-editor-align-justify" th:text="${country}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Permanent Address ZIP/Postal Code:</span><label class="html-editor-align-justify" th:text="${postalcode}"></label> </h5>
+          <h1>Academic Experience</h1>
+          <h5>Higher Education Institution</h5>
+          <h5>*Department Name (full or partial):<label class="html-editor-align-justify" th:text="${departmentname}"></label> </h5>
+          <h5>*University Name (full or partial):<label class="html-editor-align-justify" th:text="${universityname}"></label> </h5>
+          <h5>*Country:<label class="chtml-editor-align-justify" th:text="${organizationcountry}"></label> </h5>
+          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">Additional Institutions:</span> <label class="html-editor-align-justify" th:text="${additionalinstitutions}"></label> </h5>
+
+<!--          <h2>Secondary/High School</h2>-->
+
+<!--          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">School Name or City (full or partial):</span><label class="html-editor-align-justify" th:text="${schoolname}"></label> </h5>-->
+<!--          <h5><span style="font-size: 15px; color: #CCCCCC; font-family: 'Times New Roman'; ">School Country:</span><label class="html-editor-align-justify" th:text="${schoolCountry}"></label> </h5>-->
+
+
+        <!--        <p th:text="' ' + ${applicationcategory}"></p>-->
+<!--        <p th:text="' ' + ${applicationentry}"></p>-->
+<!--        <p th:text="' ' + ${academicprogramme}"></p>-->
+<!--        <p th:text="' ' + ${modestudy}"></p>-->
+<!--        <p th:text="'' + ${proposedtopic}"></p>-->
+<!--        <p th:text="'' + ${proposedsupervisor}"></p>-->
+<!--        <p th:text="' ' + ${proposedgroup}"></p>-->
+<!--        <p th:text="' ' + ${firstname}"></p>-->
+<!--        <p th:text="' ' + ${lastname}"></p>-->
+<!--        <p th:text="' ' + ${gender}"></p>-->
+<!--        <p th:text="'' + ${email}"></p>-->
+<!--        <p th:text="'' + ${address1}"></p>-->
+<!--        <p th:text="' ' + ${address2}"></p>-->
+<!--        <p th:text="' ' + ${city}"></p>-->
+<!--        <p th:text="' ' + ${country}"></p>-->
+<!--        <p th:text="' ' + ${postalcode}"></p>-->
+<!--        <p th:text="'' + ${departmentname}"></p>-->
+<!--        <p th:text="'' + ${universityname}"></p>-->
+<!--        <p th:text="' ' + ${organisationcountry}"></p>-->
+<!--        <p th:text="' ' + ${additioninstitutions}"></p>-->
+<!--        <p th:text="' ' + ${schoolname}"></p>-->
+<!--        <p th:text="' ' + ${schoolCountry}"></p>-->
+
+
+<!--      </div>-->
+<!--      <div class="success_container" th:if="${hasChanged}">-->
+<!--        <label class="success">The changes have been saved.</label>-->
+<!--      </div>-->
+<!--      <div class="title_container">-->
+<!--        <div class="link_container">-->
+<!--          <div class="nav_container">-->
+<!--&lt;!&ndash;            <a th:href="@{/applicationform}" class="button">Application Form</a>&ndash;&gt;-->
+<!--            <a onclick="window.open('http://localhost:3000/login','_blank')" class="button">Save Attributes</a>-->
+<!--          </div>-->
+<!--          <div class="button_container">-->
+<!--                          <a th:href="@{/getpolicy}" class="button">Submit Application</a>-->
+<!--            &lt;!&ndash;              <a onclick="window.open('http://localhost:3000/login')" class="button">Submit Form</a>&ndash;&gt;-->
+<!--          </div>-->
+<!--&lt;!&ndash;          <div class="nav_container">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <a th:href="@{/setup_verify}" class="button">Get Credentials</a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <a onclick="window.open('http://localhost:8080/getpolicy','_blank')" class="button">Verify</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="nav_container">&ndash;&gt;-->
+<!--&lt;!&ndash;            <a th:href="@{/deleteAccount}" class="button">Delete account</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="nav_container">&ndash;&gt;-->
+<!--&lt;!&ndash;              <a th:href="@{/changePassword}" class="button">Change password</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

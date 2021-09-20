@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Verify Attributes</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+        <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+<!--        <script>window.alert("You are going to Verify your Credentials!");</script>-->
+<!--        alert('You are going to Verify your Credentials');
+ alert("${name}");-->
+          <h5><span style="font-size: 20px; color: #0a0a0a; font-family: 'Times New Roman'; ">Credential Upload</span></h5>
+        <script language="javascript">
+
+
+          timer=setTimeout("window.close('http://localhost:8080/getpolicy','width=550,height=400')",1000)
+
+        </script>
+
+      <p  th:text="'Full Name: ' + ${university}" ></p>
+<!--      <p th:text="'Birthdate: ' + ${university}"></p>-->
+<!--      <p th:text="'University: ' + ${country}"></p>-->
+<!--      <p th:text="'Awarded Degree: ' + ${awardeddegree}"></p>-->
+<!--      <p th:text="'Student Id: ' + ${studentid}"></p>-->
+<!--      <p th:text="'Course: ' + ${course}"></p>-->
+<!--      <h4> You have successfully verified your BSc/MSc/PhD research application <img src="/image/icon-tick-27.jpg" width="50" height="50"/></h4>-->
+<!--        <div class="nav_container">-->
+<!--&lt;!&ndash;          <a th:href="@{/verify}" class="button">Verify</a>&ndash;&gt;-->
+<!--            <a onclick="window.open('http://localhost:8080/getpolicy','_blank')" class="button">Verify</a>-->
+<!--&lt;!&ndash;            <input type="button" value="Visit Google" />&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="btn btn-success" onclick=" window.open('http://localhost:8080/verify','_blank')"> Google</button>&ndash;&gt;-->
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+

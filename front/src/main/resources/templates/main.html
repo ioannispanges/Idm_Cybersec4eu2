@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin page</title>
+    <link th:href="@{/css/login.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="inner_container">
+        <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+        <div class="box">
+            <div class="title_container">
+                <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+
+
+                <label class="title">Welcome </label>
+            </div>
+            <!--      <h1 style="font-size:13px;">Please insert the information of the graduated student </h1>-->
+<!--            <h3><span style="font-size: 15px; color: blue; font-family: 'Times New Roman'; ">Please insert the information of the graduated student</span></h3>-->
+
+
+                    <form method="post" th:action="@{/main}"
+                          th:object="${loginRequest}">
+                    </form>
+            <h5><span style="font-size: 10px; color: rgba(9,103,255,0.55); font-family: 'Times New Roman'; ">1.If you have a University Degree from a Department of University of Ioannina you can get your privacy-Attribute Based Credential.</span><label class="html-editor-align-justify" th:text="${name}"></label>
+                <p><span style="font-size: 10px; color: rgba(9,103,255,0.55); font-family: 'Times New Roman'; ">Click below to "Get a Credential" that you posses a MSc/PhD Degree from a department of University of Ioannina.</span>
+                </p>
+            </h5>
+            <div class="button_container">
+            <a onclick="setTimeout('window.open(\'http://localhost:3000/credential/storage\')', 5000);" class="button">Get Credential for P-ABC</a>
+            </div>
+            <h5><span style="font-size: 10px; color: rgba(9,103,255,0.55); font-family: 'Times New Roman'; ">2.If you posses a Credential from a Department of University of Ioannina you can "Verify your possessed Credential"</span><label class="html-editor-align-justify" th:text="${username}"></label>
+            </h5>
+            <div class="button_container">
+                <a onclick="window.open('http://localhost:8080/form1')" class="button">Verify your possessed Credential</a>
+            </div>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!--            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
+            <script type="text/javascript">setTimeout("window.close();", 3000);</script>
+
+            <script>
+
+            swal({
+            title: "Reminder!",
+            text: "You need change your password. If you do it please click cancel!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+            swal("You need change your password!", {
+            icon: "info",
+            }).then(r => window.location.href='http://localhost:8080/changePassword');
+            } else {
+            swal("You change the password with first login!", {
+            icon: "success",
+            })
+            }
+            });
+
+
+            </script>
+
+</div>
+</div>
+</div>
+</body>
+</html>
+

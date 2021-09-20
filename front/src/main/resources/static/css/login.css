@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(304deg, rgba(255,255,255,1) 0%, rgb(51, 167, 196) 35%, rgb(116, 131, 132) 100%);
+    background: -webkit-linear-gradient(304deg, rgba(255,255,255,1) 0%, rgb(51, 167, 196) 35%, rgb(116, 131, 132) 100%);
+    background: linear-gradient(304deg, rgba(255,255,255,1) 0%, rgb(51, 167, 196) 35%, rgb(116, 131, 132) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#afc6c7",GradientType=1);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.img_container {
+    no-repeat: center center fixed;
+    margin: 0;
+    height: 50%;
+    width: 50%;
+    background-size: cover;
+}
+
+label {
+    text-align: center;
+}
+
+.error {
+    font-family: 'Noto Sans', sans-serif;
+    color: red;
+    font-size: 12px;
+    max-width: 230px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.error_container {
+    margin-left: 10px;
+    max-width: 240px;
+}
+.success {
+    font-family: 'Noto Sans', sans-serif;
+    color: green;
+    font-size: 12px;
+    max-width: 230px;
+}
+
+.success_container {
+    margin-left: 10px;
+}
+
+.inner_container {
+    min-height: 500px;
+    min-width: 460px;
+    -webkit-box-shadow: 0px 5px 14px -5px rgba(0,0,0,0.73);
+    box-shadow: 0px 5px 14px -5px rgba(0,0,0,0.73);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -430px;
+    margin-left: -226px;
+    display:grid;
+    grid-template-columns: 0% 100%;
+}
+
+div.box {
+    background: white;
+    margin: 0;
+    height: 100%;
+    max-height: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+.title_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+}
+
+.title {
+    font-family: Noto Sans,sans-serif, sans-serif;
+    font-size: 30px;
+}
+
+.sub-title {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
+
+input {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+form {
+    align-items: center
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 15px;
+    border-width: 1px;
+    height: 8px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+    width: 240px;
+}
+
+.form {
+    padding: 10px;
+    font-size: 15px;
+    border-width: 1px;
+    height: 8px;
+    border-color: #CCCCCC;
+    background-color: #bfbebe;
+    color: #000000;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+    width: 240px;
+}
+.form-select {
+    padding: 10px;
+    font-size: 15px;
+    border-width: 1px;
+    height: 8px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+    width: 200px;
+
+}
+.check-menu-item {
+    padding: 10px;
+    font-size: 13px;
+    border-width: 1px;
+    height: 38px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 23px;
+    box-shadow: 0px 0px 10px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+    width: 270px;
+}
+.form-control:focus {
+    outline:none;
+}
+
+.label {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    word-spacing: 2px;
+    color: #CECECE;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+.nav_label {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    padding: 12px;
+}
+.link_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.sub_label {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2px;
+    word-spacing: 2px;
+}
+
+.label_container {
+    margin-top: 12px;
+    margin-bottom: 2px;
+    margin-left: 20px;
+}
+
+.button_container{
+    font-size:13px;
+    margin: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav_container{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button {
+    font-family: 'Noto Sans', sans-serif;
+    background-color:#2dabf9;
+    border-radius:17px;
+    border: none;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    padding:9px 23px;
+    text-decoration:none;
+    width: 230px;
+    text-align: center;
+
+}
+.button:hover {
+    background-color: #0688fa;
+}
+.button:active {
+    position:relative;
+    top:1px;
+}
+
+

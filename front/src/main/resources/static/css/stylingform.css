@@ -1,0 +1,149 @@
+/****************
+BASE RULES
+****************/
+
+body {
+    background: #fff;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+p {
+    margin: 8px 0 0 0;
+}
+
+fieldset {
+    border: none;
+}
+
+button {
+    border: none;
+    text-align: center;
+}
+
+/****************
+LAYOUT RULES
+****************/
+
+.signup {
+    max-width: 500px;
+    min-width: 300px;
+    margin: 20px auto;
+    border-radius: 8px;
+    color: #888;
+}
+
+/****************
+MODULE RULES
+****************/
+
+.signup__fieldset {
+    margin: 30px auto;
+    padding: 0 30px;
+}
+
+.signup__legend {
+    color: #2a88ad;
+    font: normal 20px serif;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.signup__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.signup__btn {
+    padding: 20px 0;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    background: #2a88ad;
+    color: white;
+}
+
+.signup__headfoot {
+    background: #2a88ad;
+    color: white;
+    padding: 30px 0;
+}
+
+.signup__headfoot__center-footer {
+    margin: 0 auto;
+    width: 52%;
+}
+
+.signup__frame {
+    padding: 1px 0; /* to avoid margin collaps */
+    border-left: 1px solid #2a88ad;
+    border-right: 1px solid #2a88ad;
+}
+
+.signup__fieldset__field {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.signup__input {
+    width: 100%;
+    border: 2px solid #fff;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.33);
+    padding: 8px;
+    border-radius: 8px;
+    font: 13px Arial,Helvetica,sans-serif;
+    box-sizing: border-box;
+}
+
+.signup__btn__margin {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.signup__footer__label {
+    display: inline;
+    font-size: 0.8em;
+    margin-left: 4px;
+    color: white;
+    text-indent: 15px
+}
+
+.no-margin {
+    margin: 0;
+}
+
+/****************
+STATE RULES
+****************/
+
+.signup__headfoot--header {
+    border-radius: 8px 8px 0 0;
+}
+
+.signup__headfoot--footer {
+    border-radius: 0 0 8px 8px;
+}
+
+.signup__field--margin {
+    margin-bottom: 30px;
+}
+
+.signup__legend--number {
+    display: inline-block;
+    background: #2a88ad;
+    color: #fff;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 100% 100% 100% 20%;
+    text-align: center;
+    margin-right: 3px;
+    font-size: 0.9rem;
+}
+
+/****************
+THEME RULES
+****************/

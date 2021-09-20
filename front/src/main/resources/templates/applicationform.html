@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Application Form</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+
+        <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+        <label class="title">Application Form </label>
+      </div>
+      <div class="error_container" th:if="${unknownError}">
+        <div class="error">Something went wrong, please try again.</div>
+      </div>
+      <div class="error_container" th:if="${dateNotParsable}">
+        <div class="error">The date entered was invalid.</div>
+      </div>
+
+      <br/>
+
+      <div class="form_container">
+        <form th:action="@{/applicationform}" method="post"
+              th:object="${changeAttributesRequest}">
+
+            <div class="label_container">
+                <label class="label" for="applicationcategory">Application Category:*</label>
+            </div>
+            <select name="applicationcategory"  id="applicationcategory" class="check-menu-item"
+            autofocus="autofocus"
+                    th:field="*{applicationcategory}" value="${applicationcategory}">
+            <option value="Postgraduate PHD">Postgraduate PHD</option>
+            <option value="Postgraduate MSc">Postgraduate MSc</option>
+            </select>
+
+            <br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('applicationcategory')}"
+                th:errors="*{applicationcategory}"></span>
+            </div>
+
+            <div class="label_container">
+            <label class="label" for="applicationentry">Anticipated Entry Term:*</label>
+          </div>
+          <select name="applicationentry" id="applicationentry"  class="check-menu-item"
+                 autofocus="autofocus"
+                 th:field="*{applicationentry}" value="${applicationentry}">
+              <option value="Summer 2021-2022">Summer 2021-2022</option>
+          </select>
+
+            <br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('applicationentry')}"
+                th:errors="*{applicationentry}"></span>
+          </div>
+
+          <div class="label_container">
+          <label class="label" for="academicprogramme">Academic Programme:*</label>
+      </div>
+      <select name="academicprogramme" type="text" id="academicprogramme"  class="check-menu-item"
+             autofocus="autofocus"
+             th:field="*{academicprogramme}" value="${academicprogramme}">
+          <option value="Computer Science">Computer Science</option>
+          <option value="Educational Development Research (PhD)">Educational Development Research (PhD)</option>
+      </select>
+
+            <br/>
+      <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('academicprogramme')}"
+                th:errors="*{academicprogramme}"></span>
+      </div>
+<!--          <div class="label_container">-->
+<!--            <label class="label" for="proposedsupervisor">Proposed Supervisor</label>-->
+<!--          </div>-->
+<!--          <input type="text" id="proposedsupervisor" name="proposedsupervisor" class="form-control"-->
+<!--                 autofocus="autofocus"-->
+<!--                 th:field="*{proposedSupervisor}" value="${proposedSupervisor}"/> <br/>-->
+<!--          <div class="error_container">-->
+<!--          <span class="error" th:if="${#fields.hasErrors('proposedsupervisor')}"-->
+<!--                th:errors="*{proposedSupervisor}"></span>-->
+<!--          </div>-->
+
+          <div class="label_container">
+            <label class="label" for="modestudy">Mode of Study:*</label>
+          </div>
+          <select name="modestudy" id="modestudy"  class="check-menu-item"
+                 autofocus="autofocus"
+                 th:field="*{modestudy}" value="${modestudy}">
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+          </select>
+
+            <br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('modestudy')}"
+                th:errors="*{modestudy}"></span>
+          </div>
+          <div class="label_container">
+            <label class="label" for="proposedtopic">Proposed research topic:*</label>
+          </div>
+          <input type="text" id="proposedtopic" name="proposedtopic" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{proposedtopic}" value="${proposedtopic}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('proposedtopic')}"
+                th:errors="*{proposedtopic}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="proposedsupervisor">Proposed research supervisor:*</label>
+          </div>
+          <input type="text" id="proposedsupervisor" name="proposedsupervisor" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{proposedsupervisor}" value="${proposedsupervisor}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('proposedsupervisor')}"
+                th:errors="*{proposedsupervisor}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="proposedgroup">Proposed research group:*</label>
+          </div>
+
+          <input type="text" id="proposedgroup" name="proposedgroup" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{proposedgroup}" value="${proposedgroup}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('proposedgroup')}"
+                th:errors="*{proposedgroup}"></span>
+          </div>
+            <h1>Personal Details</h1>
+
+            <div class="label_container">
+            <label class="label" for="firstname">First Name:*</label>
+          </div>
+          <input type="text" id="firstname" name="firstname" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{firstname}" value="${firstname}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('firstname')}"
+                th:errors="*{firstname}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="lastname">Last Name:*</label>
+          </div>
+          <input type="text" id="lastname" name="lastname" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{lastname}" value="${lastname}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('lastname')}"
+                th:errors="*{lastname}"></span>
+          </div>
+            <div class="label_container">
+                <label class="label" for="gender">Gender:*</label>
+            </div>
+            <select name="gender" type="text" id="gender"  class="check-menu-item"
+                   autofocus="autofocus"
+                   th:field="*{gender}" value="${gender}">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+            </select>
+
+            <br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('gender')}"
+                th:errors="*{gender}"></span>
+            </div>
+            <h1>Contact Details</h1>
+
+            <div class="label_container">
+                <label class="label" for="email">Email Address:*</label>
+            </div>
+            <input type="email" id="email" name="email" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{email}" value="${email}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('gender')}"
+                th:errors="*{email}"></span>
+            </div>
+            <div class="label_container">
+                <label class="label" for="address1">Permanent Address Line 1:*</label>
+            </div>
+            <input type="text" id="address1" name="address1"  class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{address1}" value="${address1}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('address1')}"
+                th:errors="*{address1}"></span>
+            </div>
+            <div class="label_container">
+                <label class="label" for="address2">Permanent Address Line 2:</label>
+            </div>
+            <input type="text" id="address2" name="address2" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{address2}" value="${address2}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('address2')}"
+                th:errors="*{address2}"></span>
+            </div>
+            <div class="label_container">
+                <label class="label" for="city">Permanent Address City:*</label>
+            </div>
+            <input type="text" id="city" name="city" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{city}" value="${city}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('city')}"
+                th:errors="*{city}"></span>
+            </div>
+
+            <div class="label_container">
+                <label class="label" for="country">Permanent Address County/State:*</label>
+            </div>
+            <input type="text" id="country" name="country" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{country}" value="${country}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('country')}"
+                th:errors="*{country}"></span>
+            </div>
+            <div class="label_container">
+                <label class="label" for="postalcode">Permanent Address ZIP/Postal Code:*</label>
+            </div>
+            <input type="text" id="postalcode" name="postalcode" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{postalcode}" value="${postalcode}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('postalcode')}"
+                th:errors="*{postalcode}"></span>
+            </div>
+            <h3><span style="font-size: 15px; color: #74070f; font-family: 'Times New Roman'; ">Please upload your CV*</span></h3>
+            <div class="button_container">
+                <label for="fileupload">Upload CV*</label>
+                <input id="fileupload" type="file" name="fileupload" />
+            <h1>Academic Experience</h1>
+            <div class="label_container">
+                <h5>Higher Education Institution</h5>
+                <label class="label" for="departmentname">Department Name (full or partial):*</label>
+            </div>
+            <select name="departmentname" type="text" id="departmentname"  class="check-menu-item"
+                   autofocus="autofocus"
+                   th:field="*{departmentname}" value="${departmentname}">
+            <option value="Department of Informatics and Telecommunications">Department of Informatics and Telecommunications</option>
+            </select>
+                <br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('departmentname')}"
+                th:errors="*{departmentname}"></span>
+            </div>
+
+            <div class="label_container">
+                <label class="label" for="universityname">University Name (full or partial):*</label>
+            </div>
+            <select name="universityname" type="text" id="universityname"  class="check-menu-item"
+                   autofocus="autofocus"
+                   th:field="*{universityname}" value="${universityname}">
+            <option value="University of Ioannina">University of Ioannina</option>
+            </select>
+            <br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('universityname')}"
+                th:errors="*{universityname}"></span>
+            </div>
+            <div class="label_container">
+                <label class="label" for="organisationcountry">Country:</label>
+            </div>
+            <input type="text" id="organisationcountry" name="organisationcountry" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{organizationcountry}" value="${organizationcountry}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('organizationcountry')}"
+                th:errors="*{organizationcountry}"></span>
+            </div>
+            <div class="label_container">
+                <label class="label" for="additionalinstitutions">Additional Institutions:*</label>
+            </div>
+            <input type="text" id="additionalinstitutions" name="additionalinstitutions" class="form-control"
+                   autofocus="autofocus"
+                   th:field="*{additionalinstitutions}" value="${additionalinstitutions}"/><br/>
+            <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('additionalinstitutions')}"
+                th:errors="*{additionalinstitutions}"></span>
+                <h3><span style="font-size: 13px; color: blue; font-family: 'Times New Roman';">*If you posses an academic title from University of Ioannina, you can use your privacy Attribute based Credential.</span></h3>
+<!--                <h3><span style="font-size: 10px; color: #f62400; font-family: 'Times New Roman';">*Upload your Credential for your academic degree</span></h3>-->
+            </div>
+
+
+<!--                <button id="upload-button" onclick="uploadFile()"> Upload </button>-->
+
+
+                <!--                script for upload-->
+<!--                <script>-->
+<!--                    async function uploadFile() {-->
+<!--                        let formData = new FormData();-->
+<!--                        formData.append("file", fileupload.files[0]);-->
+<!--                        let response = await fetch('/upload', {-->
+<!--                            method: "POST",-->
+<!--                            body: formData-->
+<!--                        });-->
+
+<!--                        if (response.status === 200) {-->
+<!--                            alert("File successfully uploaded.");-->
+<!--                        }-->
+<!--                    }-->
+
+<!--                </script>-->
+
+            </div>
+            <div class="button_container">
+                <!--              <a th:href="@{/getpolicy}" class="button">Submit Application</a>-->
+                <input class="button" type="submit" value="*Upload your Credential" />
+
+
+                <!--              <a onclick="window.open('http://localhost:3000/login')" class="button">Submit Form</a>-->
+            </div>
+        </form>
+
+<!--            <div class="button_container">-->
+<!--                &lt;!&ndash;              <a th:href="@{/getpolicy}" class="button">Submit Application</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input class="button" type="submit" value="*Upload your Credential for your academic degree"/>&ndash;&gt;-->
+<!--                              <a onclick="window.open('http://localhost:8080/setup_verify')" class="button">*Upload your Credential for your academic degree</a>-->
+<!--            </div>-->
+<!--            <h2>Secondary/High School</h2>-->
+<!--            <div class="label_container">-->
+<!--                <label class="label" for="schoolCountry">School Country </label>-->
+<!--            </div>-->
+<!--            <input type="text" id="schoolCountry" name="schoolCountry" class="form-control"-->
+<!--                   autofocus="autofocus"-->
+<!--                   th:field="*{schoolCountry}" value="${schoolCountry}"/><br/>-->
+<!--            <div class="error_container">-->
+<!--          <span class="error" th:if="${#fields.hasErrors('schoolCountry')}"-->
+<!--                th:errors="*{schoolCountry}"></span>-->
+<!--            </div>-->
+<!--            <div class="label_container">-->
+<!--                <label class="label" for="schoolname">School Name or City (full or partial):*</label>-->
+<!--            </div>-->
+<!--            <input type="text" id="schoolname" name="schoolname" class="form-control"-->
+<!--                   autofocus="autofocus"-->
+<!--                   th:field="*{schoolname}" value="${schoolname}"/><br/>-->
+<!--            <div class="error_container">-->
+<!--          <span class="error" th:if="${#fields.hasErrors('schoolname')}"-->
+<!--                th:errors="*{schoolname}"></span>-->
+<!--            </div>-->
+<!--            <h3><span style="font-size: 13px; color: blue; font-family: 'Times New Roman';"><p>If you posses an academic title from University of Ioannina</p>you can use your privacy Attribute based Credential.</span></h3>-->
+<!--            <h3><span style="font-size: 10px; color: #f62400; font-family: 'Times New Roman';">*Upload your Credential for your academic degree</span></h3>-->
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

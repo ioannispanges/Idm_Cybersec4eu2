@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Manage account</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+
+      <div class="title_container">
+        <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+
+        <label class="sub-title">Login to manage your</label>
+        <label class="title">Account</label>
+      </div>
+
+      <div class="error_container" th:if="${loginError}">
+        <label class="error">Login was unsuccessful.</label>
+      </div>
+      <br/>
+      <div class="form_container">
+        <form th:action="@{/manageAccountAuthenticate}" method="post"
+              th:object="${loginRequest}">
+          <div class="label_container">
+            <label class="label" for="username">Username</label>
+          </div>
+          <input type="text" id="username" name="username" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{username}"/> <br/>
+          <div class="label_container">
+            <label class="label" for="password">Password</label>
+          </div>
+          <p  th:text="'Full Name: ' + ${firstname}" >
+          <input type="password" id="password" name="password" class="form-control"
+                 th:field="*{password}"/>
+          <br/>
+          <div class="button_container">
+            <input class="button" type="submit" value="Log in"/>
+          </div>
+        </form>
+
+
+
+<!--      <div class="link_container">-->
+<!--        <label class="sub_label">-->
+<!--          Don't have an account yet?-->
+<!--        </label>-->
+<!--        <a th:href="@{/createUser}" class="sub_label">Sign up</a>-->
+<!--      </div>-->
+    </div>
+  </div>
+</div>
+</body>
+</html>

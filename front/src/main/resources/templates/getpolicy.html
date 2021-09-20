@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Get Policy</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+        <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+<!--        <script>window.confirm("Do you have Credential to su");</script>-->
+        <!--        alert('You are going to Verify your Credentials');
+         alert("${name}");-->
+        <h4> You are going to verify your Credentials </h4>
+        <img src="/image/256x256.gif" width="130" height="100"/>
+
+        <script language="javascript">
+
+          timer=setTimeout("window.open('http://localhost:8080/verify','width=550,height=400')",10000);
+
+           timer=setTimeout("window.close('http://localhost:8080/getpolicy','width=550,height=400')",10000)
+
+        </script>
+<!--        <h4> <label class="html-editor" th:text="${departmentname}"/> </h4>-->
+<!--        <h4> <label class="html-editor" th:text="${universityname}"/> </h4>-->
+<!--        <h4> <label class="html-editor" th:text="${organizationcountry}"/> </h4>-->
+
+        <h5><span style="font-size: 15px; color: rgba(0,79,156,0.55); font-family: 'Times New Roman'; ">Department Name:</span><label class="html-editor-align-justify" th:text="${departmentname}"></label> </h5>
+        <h5><span style="font-size: 15px; color: rgba(0,79,156,0.55); font-family: 'Times New Roman'; ">University Name:</span><label class="html-editor-align-justify" th:text="${universityname}"></label> </h5>
+        <h5><span style="font-size: 15px; color: rgba(0,79,156,0.55); font-family: 'Times New Roman'; ">Country:</span><label class="html-editor-align-justify" th:text="${country}"></label> </h5>
+
+        <!--      <h4> You have successfully verified your BSc/MSc/PhD research application <img src="/image/icon-tick-27.jpg" width="50" height="50"/></h4>-->
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

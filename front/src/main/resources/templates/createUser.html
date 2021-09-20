@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin page</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+        <img src="/image/cybersecuoi.png"  width="250" height="160"/>
+
+        <label class="title">Details account </label>
+      </div>
+<!--      <h1 style="font-size:13px;">Please insert the information of the graduated student </h1>-->
+      <h3><span style="font-size: 15px; color: blue; font-family: 'Times New Roman'; ">Please insert the information of the graduated student</span></h3>
+
+      <div class="error_container" th:if="${userExists}">
+        <label class="error">That account name already exists.</label>
+      </div>
+      <div class="error_container" th:if="${unknownError}">
+        <div class="error">Something went wrong. Please try again.</div>
+      </div>
+      <br/>
+      <p th:if="${userCreationError}" class="error">Something went wrong</p>
+      <div class="form_container">
+        <form th:action="@{/createUser}" method="post"
+              th:object="${createUserRequest}">
+
+          <div class="label_container">
+            <label class="label" for="firstName">First Name</label>
+          </div>
+          <input type="text" id="firstName" name="firstName" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{firstName}"/> <br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('firstName')}"
+                th:errors="*{firstName}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="lastName">Last Name</label>
+          </div>
+          <input type="text" id="lastName" name="lastName" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{lastName}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('lastName')}"
+                th:errors="*{lastName}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="birthdate">Birth date</label>
+          </div>
+          <input type="date" id="birthdate" name="username" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{birthdate}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('birthdate')}"
+                th:errors="*{birthdate}"></span>
+          </div>
+          <div class="label_container">
+            <label class="label" for="university">University</label>
+          </div>
+          <input type="text" id="university" name="university" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{university}"/><br/>
+          <div class="error_container">
+                    <span class="error" th:if="${#fields.hasErrors('university')}"
+                          th:errors="*{university}"></span>
+          </div>
+          <div class="label_container">
+            <label class="label" for="awardeddegree">Awarded Degree</label>
+          </div>
+          <input type="text" id="awardeddegree" name="awardeddegree" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{awardeddegree}"/><br/>
+          <div class="error_container">
+                    <span class="error" th:if="${#fields.hasErrors('awardeddegree')}"
+                          th:errors="*{awardeddegree}"></span>
+          </div>
+          <div class="label_container">
+            <label class="label" for="studentid">Student Id</label>
+          </div>
+          <input type="text" id="studentid" name="studentid" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{studentid}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('studentid')}"
+                th:errors="*{studentid}"></span>
+          </div>
+<!--          <div class="label_container">-->
+<!--            <label class="label" for="course">Course</label>-->
+<!--          </div>-->
+<!--          <input type="course" id="course" name="course" class="form-control"-->
+<!--                 autofocus="autofocus"-->
+<!--                 th:field="*{course}"/><br/>-->
+<!--          <div class="error_container">-->
+<!--                    <span class="error" th:if="${#fields.hasErrors('course')}"-->
+<!--                          th:errors="*{course}"></span>-->
+<!--          </div>-->
+<!--          <br/>-->
+<!--          <br/>-->
+<!--          <h3 style="color:#FF0000">Configuring One-Time Password</h3>-->
+          <h3><span style="font-size: 15px; color: darkred; font-family: 'Times New Roman'; ">Configuring One-Time Password</span></h3>
+
+
+
+
+
+          <div class="label_container">
+            <label class="label" for="username">Username</label>
+          </div>
+          <input type="text" id="username" name="username" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{username}"/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('username')}"
+                th:errors="*{username}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="password">Password</label>
+          </div>
+          <input type="password" id="password" name="password" class="form-control"
+                 autocomplete="off"
+                 th:field="*{password}"/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('password')}"
+                th:errors="*{password}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="password">Confirm password</label>
+          </div>
+          <input type="password" id="password_check" name="password" class="form-control"
+                 autocomplete="off"
+                 th:field="*{passwordCheck}"/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('passwordsEqual')}"
+                th:errors="*{passwordsEqual}"></span>
+          </div>
+          <br/>
+          <br/>
+<!--          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+          <div class="button_container">
+            <input class="button" type="submit" value="Insert student in DB"/>
+<script>
+  // swal({
+  //   title: "Administrator Page!",
+  //   // text: "You clicked the button!",
+  //   icon: "info",
+  //   button: "Ok!",
+  // });
+  Swal.fire({
+    title: 'Administrator Page',
+    text:'Please enter your ',
+    input: 'password',
+    icon: "info",
+    inputLabel: 'Password',
+    inputPlaceholder: 'Enter your password',
+    inputAttributes: {
+      maxlength: 10,
+      autocapitalize: 'off',
+      autocorrect: 'off'
+    }
+  });
+
+</script>
+
+          </div>
+        </form>
+        <!--        <div class="link_container">-->
+        <!--          <label class="sub_label">-->
+        <!--            Already have an account?-->
+        <!--          </label>-->
+        <!--          <a th:href="@{/loginPage}" class="sub_label">Log in</a>-->
+        <!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
