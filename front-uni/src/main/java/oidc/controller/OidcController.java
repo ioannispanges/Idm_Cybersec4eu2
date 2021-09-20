@@ -54,30 +54,16 @@ public class OidcController {
     @Autowired
     Policy policy;
 
-    // Login
     // Login form
     @RequestMapping("/login")
     public String login(Model model, HttpServletRequest request,LoginRequest loginRequest) throws AuthenticationFailedException {
 //       request.getSession().setAttribute("redirectUrl", redirect_uri);
 //        request.getSession().setAttribute("state", state);
-//        request.getSession().setAttribute("nonce", nonce);
         model.addAttribute("username", loginRequest.getUsername());
-        //LoginRequest loginRequest = new LoginRequest();
         model.addAttribute("loginRequest", loginRequest);
-        //policy.setPolicyId(nonce);
         return "/login";
     }
-//
-//    @RequestMapping("/login")
-//        public String login(Model model, @RequestParam String redirect_uri, @RequestParam String state, @RequestParam String nonce, HttpServletRequest request) {
-//            request.getSession().setAttribute("redirectUrl", redirect_uri);
-//            request.getSession().setAttribute("state", state);
-//            request.getSession().setAttribute("nonce", nonce);
-//            LoginRequest loginRequest = new LoginRequest();
-//            model.addAttribute("loginRequest", loginRequest);
-//            policy.setPolicyId(nonce);
-//            return "/login";
-//    }
+
 
     @RequestMapping("/loginPage")
     public String loginPage(Model model) {

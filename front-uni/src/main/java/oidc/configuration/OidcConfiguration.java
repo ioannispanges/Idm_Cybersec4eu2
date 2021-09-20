@@ -37,57 +37,57 @@ public class OidcConfiguration {
      */
 
     @Bean
-    public UserClient createUserClient() throws Exception {
-        String[] serverArray = servers.split(",");
-        List<PestoIdPRESTConnection> idps = new ArrayList<PestoIdPRESTConnection>();
-        UserClient client = null;
-        Properties systemProps = System.getProperties();
-        systemProps.put("javax.net.ssl.trustStore", "src/test/resources/truststore.jks");
-        systemProps.put("javax.net.ssl.trustStorePassword", "OLYMPUS");
-        // Ensure that there is a certificate in the trust store for the webserver connecting
-        HostnameVerifier verifier = new DefaultHostnameVerifier();
-        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(verifier);
-
-        for (int i = 0; i < serverArray.length; i++) {
-            System.out.println("Server " + i + 1 + ": " + serverArray[i]);
-            PestoIdPRESTConnection idp = new PestoIdPRESTConnection(serverArray[i], "", i, 100000);
-            idps.add(idp);
-        }
-        CredentialManagement credentialManagement=new PSCredentialManagement(true, new InMemoryCredentialStorage());
-        ClientCryptoModule cryptoModule = new SoftwareClientCryptoModule(new Random(1), ((RSAPublicKey)idps.get(0).getCertificate().getPublicKey()).getModulus());
-        client = new PestoClient(idps, cryptoModule);
-
-        return client;
-    }
-
-//    public UserClient createUserClient() throws Exception{
+//    public UserClient createUserClient() throws Exception {
 //        String[] serverArray = servers.split(",");
-//
-//        List<PabcIdPRESTConnection> idps = new ArrayList<>();
+//        List<PestoIdPRESTConnection> idps = new ArrayList<PestoIdPRESTConnection>();
 //        UserClient client = null;
 //        Properties systemProps = System.getProperties();
 //        systemProps.put("javax.net.ssl.trustStore", "src/test/resources/truststore.jks");
 //        systemProps.put("javax.net.ssl.trustStorePassword", "OLYMPUS");
+//        // Ensure that there is a certificate in the trust store for the webserver connecting
+//        HostnameVerifier verifier = new DefaultHostnameVerifier();
+//        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(verifier);
+//
 //        for (int i = 0; i < serverArray.length; i++) {
 //            System.out.println("Server " + i + 1 + ": " + serverArray[i]);
-//            PabcIdPRESTConnection idp = new PabcIdPRESTConnection(serverArray[i], "", i, 100000);
+//            PestoIdPRESTConnection idp = new PestoIdPRESTConnection(serverArray[i], "", i, 100000);
 //            idps.add(idp);
 //        }
-//        Map<Integer, MSverfKey> publicKeys = new HashMap<>();
-//        for (int i = 0; i < serverArray.length; i++) {
-//            publicKeys.put(i, idps.get(i).getPabcPublicKeyShare());
-//        }
-//        PabcPublicParameters publicParam = idps.get(0).getPabcPublicParam();
-//        CredentialManagement credentialManagement = new PSCredentialManagement(true, new InMemoryCredentialStorage());
-//        ((PSCredentialManagement) credentialManagement).setup(publicParam, publicKeys, seed);
+//        CredentialManagement credentialManagement=new PSCredentialManagement(true, new InMemoryCredentialStorage());
+//        ClientCryptoModule cryptoModule = new SoftwareClientCryptoModule(new Random(1), ((RSAPublicKey)idps.get(0).getCertificate().getPublicKey()).getModulus());
+//        client = new PestoClient(idps, cryptoModule);
 //
-//        ClientCryptoModule cryptoModule = new SoftwareClientCryptoModule(new Random(1), ((RSAPublicKey) idps.get(0).getCertificate().getPublicKey()).getModulus());
-//
-//         client = new PabcClient(idps, credentialManagement, cryptoModule);
-//        PSPABCVerifier verifier = new PSPABCVerifier();
-//        verifier.setup(idps, seed);
 //        return client;
 //    }
+
+    public UserClient createUserClient() throws Exception{
+        String[] serverArray = servers.split(",");
+
+        List<PabcIdPRESTConnection> idps = new ArrayList<>();
+        UserClient client = null;
+        Properties systemProps = System.getProperties();
+        systemProps.put("javax.net.ssl.trustStore", "src/test/resources/truststore.jks");
+        systemProps.put("javax.net.ssl.trustStorePassword", "OLYMPUS");
+        for (int i = 0; i < serverArray.length; i++) {
+            System.out.println("Server " + i + 1 + ": " + serverArray[i]);
+            PabcIdPRESTConnection idp = new PabcIdPRESTConnection(serverArray[i], "", i, 100000);
+            idps.add(idp);
+        }
+        Map<Integer, MSverfKey> publicKeys = new HashMap<>();
+        for (int i = 0; i < serverArray.length; i++) {
+            publicKeys.put(i, idps.get(i).getPabcPublicKeyShare());
+        }
+        PabcPublicParameters publicParam = idps.get(0).getPabcPublicParam();
+        CredentialManagement credentialManagement = new PSCredentialManagement(true, new InMemoryCredentialStorage());
+        ((PSCredentialManagement) credentialManagement).setup(publicParam, publicKeys, seed);
+
+        ClientCryptoModule cryptoModule = new SoftwareClientCryptoModule(new Random(1), ((RSAPublicKey) idps.get(0).getCertificate().getPublicKey()).getModulus());
+
+         client = new PabcClient(idps, credentialManagement, cryptoModule);
+        PSPABCVerifier verifier = new PSPABCVerifier();
+        verifier.setup(idps, seed);
+        return client;
+    }
 
     /**
      * The policy used when authenticating a login request.

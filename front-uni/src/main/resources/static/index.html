@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Login page</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet"/>
+</head>
 <head>
   <meta charset="UTF-8">
   <title>Welcome PAge</title>
 </head>
 <body>
-<h1>Welcome to the Verification Syste,</h1>
+<h1>Welcome to the Verification System</h1>
 <a href="/createUser">Administration Page</a>
 <a href="/login">Login to University Account</a>
 </body>
